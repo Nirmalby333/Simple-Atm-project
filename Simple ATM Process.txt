@@ -1,0 +1,92 @@
+package sample;
+import java.util.Scanner;
+public class miniproject {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		 int pinnum = 2005;
+	        double accbalance = 14510000;
+	        //Basic Details
+	        Scanner madh = new Scanner(System.in);
+	        //NAME
+	        System.out.println("Enter Your Name:");
+	        String name = madh.next();
+	        //SEX
+	        System.out.println("Enter Your Sex:");
+	        String sex = madh.next();
+	        //MAILID
+	        System.out.println("Enter Your Mail Id:");
+	        String mailid = madh.next();
+	        Scanner kumar = new Scanner(System.in);
+	        //AGE
+	        System.out.println("Enter Your Age");
+	        int age = kumar.nextInt();
+	        //DOB
+	        System.out.println("Enter Your Date of Birth:");
+	        String dob = kumar.next();
+	        //Aadhar No.
+	        System.out.println("Enter Your Aadhar number:");
+	        double aadhar = kumar.nextDouble();
+	        System.out.println("USER NAME AS PER AADHAR:"+name);
+	        System.out.println("SEX:"+sex);
+	        System.out.println("REGISTERED MAIL ID:"+mailid);
+	        System.out.println("AGE AS PER AADHAR:"+age);
+	        System.out.println("DATE OF BIRTH AS PER AADHAR:"+dob);
+	        System.out.println("GOVERNMENT VERIFIED AADHAR NUMBER:"+aadhar);
+	        //VERIFY PINNUMBER
+	        Scanner pin = new Scanner(System.in);
+	        System.out.println("Enter your Pin number:");
+	        int Pin = pin.nextInt();
+	        if(Pin == pinnum) 
+	        {
+	        	System.out.println("GREETINGS FROM MADHAN INTERNATIONAL MNC BANK");
+	        	System.out.println("Enter Number 1 for Withdrawal");
+	        	System.out.println("Enter Number 2 for Deposits");
+	        	System.out.println("Enter Number 3 for Checking the balance of your account");
+	        	if(accbalance >= 1000) 
+	        	{
+	        		System.out.println("The Account is Eligible to make transcations");
+	        	}
+	        	else {
+	        		System.out.println("Your Account Minimum Balance is very low so you cannot make any transcations,and you should pay a fine amount of Rs.50 paise every day");
+	        	}
+	        	for(int i =1;i<=3;i++)
+	        	{
+	        		Scanner choice = new Scanner(System.in);
+		        	System.out.println("Enter Your Choice:");
+		        	int Choice = choice.nextInt();
+	        	if(Choice==1) {
+	        		Scanner with = new Scanner(System.in);
+	        		System.out.println("Enter the amount for the Withdrawal:");
+	        		double With = with.nextDouble();
+	        		double currentbal = accbalance - With;
+	        		if( With > accbalance) {
+	        			System.out.println("Since the withdrawal amount is greater than the account balance the withdrawal cannot be processed");
+	        		}
+	        		else {
+	        		System.out.println("Current balance is now changed as:"+currentbal);
+	        		}
+	        	}
+	        		else if(Choice == 2) 
+	        		{
+	        			Scanner deposit = new Scanner(System.in);
+	        			System.out.println("Enter the amount for depositing:");
+	        			double depo = deposit.nextDouble();
+	        			double Currentbal = accbalance - depo;
+	        			System.out.println("Current balance is now chnged after depositing as:"+Currentbal);
+	        		}
+	        		else if(Choice == 3) 
+	        		{
+	        			System.out.println("Checking of the account balance ");
+	        			System.out.println(accbalance);
+	        		}
+	        			else {
+	        				System.out.println("Your information is ivalid please provide the appropriate information");
+	        			}
+	        	}
+	        }
+	        	else {
+	        		System.out.println("You have entered the incorrect pin and you have still only two more tries");
+	        	}
+	        }   
+}
